@@ -20,10 +20,10 @@ public class Pet {
 	public String signs;
 	//public Image picture;
 	//public ArrayList<Event> events;
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name = "owner_id")
 	public Owner owner;
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name = "vet_id")
 	public Vet vet;
 	
