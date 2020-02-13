@@ -6,7 +6,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<dependencies>
-		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -54,7 +53,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId> <artifactId>spring-webmvc</artifactId> <version>5.2.0.RELEASE</version>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
