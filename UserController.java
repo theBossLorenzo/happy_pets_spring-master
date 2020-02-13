@@ -66,6 +66,34 @@ public class UserController {
         }
     	return new ResponseEntity<Object>(userService.updateOwner(owner), HttpStatus.OK);
     }
+	
+	@PostMapping(value = "/signUpVet")
+    public ResponseEntity<Vet> signUpVet(@RequestBody Vet vet){
+    	if(userService.getUser(vet)) {
+    		return new ResponseEntity<Vet>(vet,HttpStatus.CONFLICT);
+    	}
+    	userService.saveVet(vet);
+    	return new ResponseEntity<Vet>(vet,HttpStatus.OK);
+    }
+ 
+ @PostMapping(value = "/signUpAdmin")
+    public ResponseEntity<Admin> signUpAdmin(@RequestBody Admin admin){
+    	if(userService.getUser(admin)) {
+    		return new ResponseEntity<Admin>(admin,HttpStatus.CONFLICT);
+    	}
+    	userService.saveAdmin(admin);
+    	return new ResponseEntity<Admin>(admin,HttpStatus.OK);
+    }
+
+ @PostMapping(value = "/signUpOwner")
+    public ResponseEntity<Owner> signUpOwner(@RequestBody Owner owner){
+    	if(userService.getUser(owner)) {
+    		return new ResponseEntity<Owner>(owner,HttpStatus.CONFLICT);
+    	}
+    	userService.saveOwner(owner);
+    	return new ResponseEntity<Owner>(owner,HttpStatus.OK);
+    }
+
 
 
 }

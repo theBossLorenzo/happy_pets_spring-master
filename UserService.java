@@ -50,4 +50,16 @@ public class UserService {
 		return userDao.updateOwner(owner);
 		
 	}
+	
+	 public Object saveVet(Vet vet) {
+	    return userDao.persist(vet);
+	}
+	    
+	public Object saveOwner(Owner owner) {
+	    return userDao.persist(owner);
+    }
+	    
+	public Object saveAdmin(Admin admin) {
+	    	return userDao.persist(admin);
+	}
 }
